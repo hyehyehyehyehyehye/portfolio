@@ -1,3 +1,118 @@
-img {
-  width: 100vw;
+header {
+  margin-top: 5rem;
+}
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+header .logo img {
+  width: 5vw;
+}
+header .nav_menu {
+  display: flex;
+  gap: 6rem;
+  position: relative;
+  top: -3px;
+}
+/* header end */
+
+/* container_wrap */
+.container_wrap {
+  padding-top: 5vh;
+  padding-bottom: 20vh;
+}
+.container_wrap .main_intro {
+  width: 100%;
+}
+.container_wrap .main_intro .bx-wrapper {
+  text-align: center;
+}
+
+.container_wrap .main_intro .text_rol li {
+  color: var(--primary);
+}
+.container_wrap h1 {
+  text-align: center;
+  line-height: 24rem;
+  letter-spacing: 0.5rem;
+}
+.container_wrap .email_photo_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90vh;
+  padding-top: 5rem;
+}
+
+.container_wrap .email_photo_btn .photo {
+  width: 34vw;
+  height: 88vh;
+  background-color: rgb(0, 0, 0);
+  border-radius: 400px;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container_wrap .email_photo_btn .btn_wrap {
+  display: flex;
+  gap: 20px;
+}
+.container_wrap .email_photo_btn .btn_wrap a {
+  padding: 2.5vh 2.5vw;
+  border: 2px solid #000;
+  border-radius: 60px;
+}
+.container_wrap .email_photo_btn .btn_wrap .btn:hover a {
+  border: 2px solid var(--primary);
+  background-color: var(--primary);
+  color: #fff;
+}
+.container_wrap .main_about {
+  padding-top: 20vh;
+  position: relative;
+}
+.container_wrap .main_about p {
+  font-size: 1.2vw;
+  line-height: 1.6;
+}
+.container_wrap .main_about img {
+  width: 46vw;
+}
+.container_wrap .main_about .text_wrap {
+  position: absolute;
+  top: 48vh;
+  left: 50vw;
+}
+.container_wrap .main_about .text_wrap .textbox2 {
+  padding-top: 8vh;
+}
+
+.container_wrap .text_rol_wrap .text_rol_about {
+  position: absolute;
+  left: 0;
+  display: flex;
+  gap: 8vw;
+  width: 1440px;
+  animation: textLoop 8s linear infinite;
+}
+
+@keyframes textLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.container_wrap .text_rol_wrap .text_rol_about .gray {
+  color: var(--gray2);
+}
+.container_wrap .text_area {
+  padding-top: 14.5vw;
+}
+.container_wrap .text_area .h3 {
+  line-height: 1.55;
 }
