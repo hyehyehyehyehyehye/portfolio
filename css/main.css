@@ -219,6 +219,7 @@ header .nav_menu {
 .work {
   padding-top: 21svw;
   height: 100%;
+  padding-bottom: 21vw;
 }
 .work_ex {
   position: relative;
@@ -268,9 +269,6 @@ header .nav_menu {
   font-size: 1.2vw;
 }
 
-.edu_wrap {
-  padding-top: 21vw;
-}
 .edu_wrap h2 {
   padding-bottom: 2.6vw;
 }

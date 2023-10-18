@@ -49,14 +49,14 @@ let b_right = $(".b_right");
 
 $(window).on("scroll", function () {
   if (checkVisible($(".edu_wrap")) && !isVisible) {
-    b_left.delay(1000).queue(function (next) {
+    b_left.delay(500).queue(function (next) {
       $(this).css({
         transform: "translateX(0)",
         transition: "0.5s",
       });
       next();
     });
-    b_right.delay(1000).queue(function (next) {
+    b_right.delay(500).queue(function (next) {
       $(this).css({
         transform: "translateX(0)",
         transition: "0.5s",
