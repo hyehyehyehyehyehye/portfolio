@@ -23,7 +23,7 @@ header .nav_menu {
 
 /* container_wrap */
 .container_wrap {
-  padding-top: 2.6vw;
+  padding-top: 3vw;
   padding-bottom: 20vw;
 }
 .container_wrap .main_intro {
@@ -36,7 +36,7 @@ header .nav_menu {
 .container_wrap .main_intro .text_rol li {
   color: var(--primary);
   font-weight: 600;
-  font-size: 3.2rem;
+  font-size: 1.8vw;
 }
 .container_wrap h1 {
   text-align: center;
@@ -63,7 +63,7 @@ header .nav_menu {
 }
 .container_wrap .email_photo_btn .btn_wrap {
   display: flex;
-  gap: 20px;
+  gap: 3rem;
 }
 .container_wrap .email_photo_btn .btn_wrap a {
   padding: 1.2vw 2.5vw;
@@ -86,11 +86,13 @@ header .nav_menu {
 }
 .container_wrap .main_about img {
   width: 38vw;
+  transform: translateX(-130%);
 }
 .container_wrap .main_about .text_wrap {
   position: absolute;
   top: 36%;
   left: 50vw;
+  transform: translateX(160%);
 }
 .container_wrap .main_about .text_wrap .textbox2 {
   padding-top: 8vw;
@@ -127,20 +129,22 @@ header .nav_menu {
 .container_wrap .text_rol_wrap.works .text_rol_loop .gray {
   margin-right: 70px;
 }
-
+.project {
+  padding-bottom: 22vw;
+}
 .pro_wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  gap: 3rem;
+  gap: 5rem;
 }
 
 .pro_wrap li {
-  width: 40vw;
+  width: 38vw;
   position: relative;
   padding-bottom: 1.8rem;
-  padding-top: 2.8vw;
+  padding-top: 2.6vw;
 }
 .pro_wrap li:nth-child(3),
 .pro_wrap li:nth-child(4) {
@@ -157,17 +161,20 @@ header .nav_menu {
 }
 
 .pro_wrap li:nth-child(1) .img {
-  background: url(../img/pro1.jpg) no-repeat center center;
-  background-size: 800px;
+  background: #fff url(../img/project/pro1.png) no-repeat top center/cover;
+  border: 2px solid var(--primary);
 }
 .pro_wrap li:nth-child(2) .img {
-  background: url(../img/pro2.png) no-repeat center center/cover;
+  background: #fff url(../img/project/pro2.png) no-repeat top center/cover;
+  border: 2px solid var(--primary);
 }
 .pro_wrap li:nth-child(3) .img {
-  background: url(../img/pro3.png) no-repeat center center/cover;
+  background: #fff url(../img/project/pro3.png) no-repeat top center/cover;
+  border: 2px solid var(--primary);
 }
 .pro_wrap li:nth-child(4) .img {
   background: url() no-repeat center center/cover;
+  border: 2px solid var(--primary);
 }
 .pro_wrap li .img:hover {
   transition: all 0.5s;
@@ -201,7 +208,7 @@ header .nav_menu {
 .more_btn_wrap {
   display: flex;
   justify-content: center;
-  padding-top: 6rem;
+  padding-top: 8rem;
 }
 .more_btn a {
   display: inline-block;
@@ -217,17 +224,21 @@ header .nav_menu {
 }
 
 .work {
-  padding-top: 21svw;
   height: 100%;
   padding-bottom: 21vw;
 }
+.work h2 {
+  padding-bottom: 2vw;
+}
 .work_ex {
   position: relative;
-  height: 27.7vw;
+  height: 17.2vw;
+  transform: translateX(-120%);
 }
 .work_ex2 {
   position: relative;
   height: 16vw;
+  transform: translateX(120%);
 }
 .work_ex h2 {
   padding-bottom: 2.6%;
@@ -237,7 +248,7 @@ header .nav_menu {
   width: 100%;
   height: 16vw;
   position: absolute;
-  padding: 5rem;
+  padding: 3vw;
   border-radius: 5vw;
   border: 2px solid #0600ff;
   background: linear-gradient(90deg, #d8e7ff 0%, #fafdff 100%);
@@ -257,7 +268,7 @@ header .nav_menu {
 }
 
 .work_ex_box .box .box_textL {
-  padding-left: 5rem;
+  padding-left: 1.2vw;
 }
 .work_ex_box .box .box_textL span {
   font-size: 1.2vw;
@@ -268,9 +279,11 @@ header .nav_menu {
   padding-top: 3.2vw;
   font-size: 1.2vw;
 }
-
+.edu_wrap {
+  padding-bottom: 21.5vw;
+}
 .edu_wrap h2 {
-  padding-bottom: 2.6vw;
+  padding-bottom: 2vw;
 }
 .edu_wrap .edu_box {
   display: flex;
@@ -294,8 +307,46 @@ header .nav_menu {
 }
 
 .edu_wrap .edu_box .box .box_text {
-  padding: 4.5vw;
+  padding: 4.7vw 4.2vw;
 }
 .edu_wrap .edu_box .box .box_text span {
   font-size: 1.2vw;
+}
+
+.tool_wrap ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2vw;
+}
+
+.tool_bar {
+  background: #d8e7ff;
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  display: flex;
+  height: 5vw;
+  width: 38vw;
+}
+.tool_bar p {
+  position: absolute;
+  text-indent: 2vw;
+  font-weight: 700;
+  color: #fff;
+}
+.tool_bar span {
+  margin-left: 5px;
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  right: 3vw;
+  mix-blend-mode: difference;
+}
+.tool_bar .bar {
+  border-radius: 100px;
+  background: var(--primary);
+  height: 5vw;
+  width: 0;
 }

@@ -8,7 +8,7 @@ $(".text_rol").bxSlider({
 });
 
 let txt = $(".txt");
-let bar = $(".bar");
+let bar = $(".progress .bar ");
 //스크롤진행율 계산 함수
 function getPercent(sct) {
   const scrollHeight = $(".wrap").height();
@@ -43,12 +43,39 @@ $(".text_rol_loop").bxSlider({
 });
 
 //스크롤 애니
-const isVisible = false;
+let isVisibleWork = false;
+let isVisibleEdu = false;
+let isVisibleAbout = false;
+
 let b_left = $(".b_left");
 let b_right = $(".b_right");
+let work_ex = $(".work_ex");
+let work_ex2 = $(".work_ex2");
+let main_aboutIMG = $(".main_about>img");
+let text_wrap = $(".main_about>.text_wrap");
 
 $(window).on("scroll", function () {
-  if (checkVisible($(".edu_wrap")) && !isVisible) {
+  if (checkVisible($(".work")) && !isVisibleWork) {
+    work_ex.delay(500).queue(function (next) {
+      $(this).css({
+        transform: "translateX(0)",
+        transition: "0.5s",
+      });
+      next();
+    });
+    work_ex2.delay(500).queue(function (next) {
+      $(this).css({
+        transform: "translateX(0)",
+        transition: "0.5s",
+      });
+      next();
+    });
+    isVisibleWork = true;
+  }
+});
+
+$(window).on("scroll", function () {
+  if (checkVisible($(".edu_wrap")) && !isVisibleEdu) {
     b_left.delay(500).queue(function (next) {
       $(this).css({
         transform: "translateX(0)",
@@ -63,7 +90,28 @@ $(window).on("scroll", function () {
       });
       next();
     });
-    isVisible = true;
+    isVisibleEdu = true;
+  }
+});
+
+$(window).on("scroll", function () {
+  if (checkVisible($(".main_about")) && !isVisibleAbout) {
+    main_aboutIMG.delay(500).queue(function (next) {
+      $(this).css({
+        transform: "translateX(0)",
+        transition: "0.5s",
+      });
+      next();
+    });
+
+    text_wrap.delay(500).queue(function (next) {
+      $(this).css({
+        transform: "translateX(0)",
+        transition: "0.5s",
+      });
+      next();
+    });
+    isVisibleAbout = true;
   }
 });
 
@@ -71,10 +119,47 @@ function checkVisible(elm, eval) {
   eval = eval || "object visible";
   var viewportHeight = $(window).height(),
     scrolltop = $(window).scrollTop(),
-    y = $(elm).offset().top,
-    elementHeight = $(elm).height();
+    y = elm.offset().top,
+    elementHeight = elm.height();
 
   if (eval == "object visible")
     return y < viewportHeight + scrolltop && y > scrolltop - elementHeight;
+  if (eval == "above") return y < viewportHeight + scrolltop;
+}
+
+//skill
+$(window).on("scroll", function () {
+  var toolWrap = $(".tool_wrap");
+  var toolBars = toolWrap.find(".tool_bar");
+
+  if (checkVisible(toolWrap)) {
+    toolBars.each(function (index) {
+      var barElement = $(this).find(".bar");
+      var percentValue = $(this).attr("data-percent");
+
+      setTimeout(function () {
+        barElement.animate(
+          {
+            width: percentValue,
+          },
+          500
+        );
+      }, 500);
+    });
+  }
+});
+
+function checkVisible(elm, eval) {
+  eval = eval || "object visible";
+
+  var viewportHeight = $(window).height();
+  var scrolltop = $(window).scrollTop();
+
+  var y = elm.offset().top;
+  var elementHeight = elm.height();
+
+  if (eval == "object visible")
+    return y < viewportHeight + scrolltop && y > scrolltop - elementHeight;
+
   if (eval == "above") return y < viewportHeight + scrolltop;
 }
