@@ -41,3 +41,40 @@ $(".text_rol_loop").bxSlider({
   ticker: true,
   speed: 9000,
 });
+
+//스크롤 애니
+const isVisible = false;
+let b_left = $(".b_left");
+let b_right = $(".b_right");
+
+$(window).on("scroll", function () {
+  if (checkVisible($(".edu_wrap")) && !isVisible) {
+    b_left.delay(1000).queue(function (next) {
+      $(this).css({
+        transform: "translateX(0)",
+        transition: "0.5s",
+      });
+      next();
+    });
+    b_right.delay(1000).queue(function (next) {
+      $(this).css({
+        transform: "translateX(0)",
+        transition: "0.5s",
+      });
+      next();
+    });
+    isVisible = true;
+  }
+});
+
+function checkVisible(elm, eval) {
+  eval = eval || "object visible";
+  var viewportHeight = $(window).height(),
+    scrolltop = $(window).scrollTop(),
+    y = $(elm).offset().top,
+    elementHeight = $(elm).height();
+
+  if (eval == "object visible")
+    return y < viewportHeight + scrolltop && y > scrolltop - elementHeight;
+  if (eval == "above") return y < viewportHeight + scrolltop;
+}

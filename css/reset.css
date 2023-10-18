@@ -172,16 +172,8 @@ h3,
 }
 
 .inner {
-  max-width: 83%;
+  max-width: 83.6%;
   margin: 0 auto;
-}
-
-img.back {
-  width: 100vw;
-  opacity: 0.2;
-  position: absolute;
-  top: 0;
-  z-index: -1;
 }
 
 .progress {
@@ -197,7 +189,7 @@ img.back {
   z-index: 1;
 }
 
-.bar {
+.progress .bar {
   position: absolute;
   width: 0%;
   height: 100%;
@@ -207,4 +199,12 @@ img.back {
 
 .txt {
   font-size: 30px;
+}
+
+img.back {
+  width: 100vw;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
