@@ -137,13 +137,13 @@ a {
 
 h1,
 .h1 {
-  font-size: 6vw;
+  font-size: 6.2vw;
   font-weight: 600;
 }
 
 h2,
 .h2 {
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 600;
 }
 
@@ -178,8 +178,33 @@ h3,
 
 img.back {
   width: 100vw;
-  opacity: 0.3;
+  opacity: 0.2;
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.progress {
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  bottom: 0;
+  height: 5px;
+  transform: translateX(-50%);
+  text-align: center;
+  line-height: 1;
+  border: 0.5px solid #222;
+  z-index: 1;
+}
+
+.bar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary);
+  left: 0;
+}
+
+.txt {
+  font-size: 30px;
 }
