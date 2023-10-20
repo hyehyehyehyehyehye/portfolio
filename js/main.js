@@ -1,3 +1,4 @@
+//top text
 $(".text_rol").bxSlider({
   mode: "vertical",
   slideMargin: 5,
@@ -7,6 +8,16 @@ $(".text_rol").bxSlider({
   pause: 1000,
 });
 
+//loop text
+$(".text_rol_loop").bxSlider({
+  minSlides: 4,
+  maxSlides: 4,
+  slideWidth: 1440,
+  ticker: true,
+  speed: 9000,
+});
+
+// 하단 스크롤 게이지 바
 let txt = $(".txt");
 let bar = $(".progress .bar ");
 //스크롤진행율 계산 함수
@@ -33,15 +44,6 @@ $(window).on("scroll", function () {
   getPercent(sct);
 });
 
-//흐르는 텍스트
-$(".text_rol_loop").bxSlider({
-  minSlides: 4,
-  maxSlides: 4,
-  slideWidth: 1440,
-  ticker: true,
-  speed: 9000,
-});
-
 //스크롤 애니
 let isVisibleWork = false;
 let isVisibleEdu = false;
@@ -54,6 +56,7 @@ let work_ex2 = $(".work_ex2");
 let main_aboutIMG = $(".main_about>img");
 let text_wrap = $(".main_about>.text_wrap");
 
+// work
 $(window).on("scroll", function () {
   if (checkVisible($(".work")) && !isVisibleWork) {
     work_ex.delay(500).queue(function (next) {
@@ -74,6 +77,7 @@ $(window).on("scroll", function () {
   }
 });
 
+// education
 $(window).on("scroll", function () {
   if (checkVisible($(".edu_wrap")) && !isVisibleEdu) {
     b_left.delay(500).queue(function (next) {
@@ -94,6 +98,7 @@ $(window).on("scroll", function () {
   }
 });
 
+//about
 $(window).on("scroll", function () {
   if (checkVisible($(".main_about")) && !isVisibleAbout) {
     main_aboutIMG.delay(500).queue(function (next) {
@@ -142,9 +147,9 @@ $(window).on("scroll", function () {
           {
             width: percentValue,
           },
-          500
+          1000
         );
-      }, 500);
+      }, 800);
     });
   }
 });
@@ -163,3 +168,24 @@ function checkVisible(elm, eval) {
 
   if (eval == "above") return y < viewportHeight + scrolltop;
 }
+
+//btn
+$(".btn").mouseenter(function (e) {
+  var parentOffset = $(this).offset();
+
+  var relX = e.pageX - parentOffset.left;
+  var relY = e.pageY - parentOffset.top;
+  $(this).prev(".su_button_circle").css({ left: relX, top: relY });
+  $(this).prev(".su_button_circle").removeClass("desplode-circle");
+  $(this).prev(".su_button_circle").addClass("explode-circle");
+});
+
+$(".btn").mouseleave(function (e) {
+  var parentOffset = $(this).offset();
+
+  var relX = e.pageX - parentOffset.left;
+  var relY = e.pageY - parentOffset.top;
+  $(this).prev(".su_button_circle").css({ left: relX, top: relY });
+  $(this).prev(".su_button_circle").removeClass("explode-circle");
+  $(this).prev(".su_button_circle").addClass("desplode-circle");
+});
