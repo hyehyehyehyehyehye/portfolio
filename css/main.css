@@ -229,7 +229,7 @@ header .nav_menu li > a {
 }
 
 .project {
-  padding-bottom: 22vw;
+  padding-bottom: 21vw;
 }
 .pro_wrap {
   display: flex;
@@ -401,7 +401,7 @@ header .nav_menu li > a {
   font-size: 1.2vw;
 }
 .edu_wrap {
-  padding-bottom: 21.5vw;
+  padding-bottom: 21vw;
 }
 .edu_wrap h2 {
   padding-bottom: 2vw;
@@ -433,7 +433,9 @@ header .nav_menu li > a {
 .edu_wrap .edu_box .box .box_text span {
   font-size: 1.2vw;
 }
-
+.tool_wrap {
+  padding-bottom: 21vw;
+}
 .tool_wrap ul {
   display: flex;
   flex-direction: row;
@@ -470,6 +472,37 @@ header .nav_menu li > a {
   background: var(--primary);
   height: 5vw;
   width: 0;
+}
+
+.artworks ul {
+  width: 100%;
+  display: flex;
+  gap: 2.2vw;
+  position: absolute;
+  overflow: hidden;
+}
+.artworks ul li {
+  position: relative;
+  border: 2px solid var(--primary);
+  border-radius: 3vw;
+  overflow: hidden;
+  flex: 0 0 24vw;
+}
+.artworks ul li .mask {
+  border-radius: 3vw;
+  width: 24vw;
+  height: 32vw;
+}
+.artworks ul li .mask img {
+  width: 24vw;
+  position: absolute;
+}
+
+.artworks ul li .btn_vist {
+  position: absolute;
+  bottom: 0;
+  right: 2vw;
+  z-index: 2;
 }
 
 @media screen and (max-width: 1024px) {
