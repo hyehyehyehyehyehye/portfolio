@@ -18,6 +18,9 @@ body::after {
   top: 330vw;
   z-index: -1;
 }
+.wrap {
+  overflow: hidden;
+}
 
 /* header */
 
