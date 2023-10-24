@@ -259,7 +259,7 @@ $(() => {
     );
   });
 
-  // // //
+  // // // top text
   const content = "JO SO HYE";
   const text = document.querySelector(".section.home .h1");
   let i = 0;
@@ -269,7 +269,55 @@ $(() => {
       let txt = content.charAt(i);
       text.innerHTML += txt;
       i++;
+    } else {
+      clearInterval(intervalId);
     }
   }
-  setInterval(typing, 200);
+
+  const intervalId = setInterval(typing, 200);
+
+  // // // artwork img hover event
+  $(".pro_wrap li").hover(
+    function () {
+      var image = $(this).find(".img_hover img");
+      var imageHeight = image.height();
+      var containerHeight = $(this).height();
+      var topValue =
+        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
+
+      image.stop().animate({ top: topValue }, 3000);
+    },
+    function () {
+      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
+    }
+  );
+
+  $(".sliders.graphic li").hover(
+    function () {
+      var image = $(this).find(".img_hover img");
+      var imageHeight = image.height();
+      var containerHeight = $(this).height();
+      var topValue =
+        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
+
+      image.stop().animate({ top: topValue }, 3000);
+    },
+    function () {
+      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
+    }
+  );
+
+  // // //
+  $("nav ul li a").click(function (e) {
+    e.preventDefault();
+    var target = $(this).attr("href");
+    var offset = $(target).offset().top;
+
+    $("html, body").animate(
+      {
+        scrollTop: offset,
+      },
+      1000
+    );
+  });
 });
