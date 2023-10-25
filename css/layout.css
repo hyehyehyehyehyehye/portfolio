@@ -58,6 +58,7 @@ header nav ul {
 }
 header nav ul > li > a {
   padding: 0 2vw;
+  font-size: 1.2vw;
 }
 
 /* header end */
@@ -68,7 +69,7 @@ main {
 }
 .section.home {
   margin-top: 3vw;
-  margin-bottom: 20vw;
+  margin-bottom: 26vw;
 }
 .section.home .text {
   width: 100%;
@@ -243,7 +244,7 @@ main {
 
 /* section projects*/
 .section.projects {
-  margin-bottom: 21vw;
+  margin-bottom: 26vw;
   position: relative;
   overflow: hidden;
 }
@@ -373,65 +374,10 @@ main {
   border-radius: 50vw;
 }
 /* section projects end */
-/* section work */
-.section.work {
-  margin-bottom: 21vw;
-}
-.section.work h2 {
-  padding-bottom: 2vw;
-}
-.section.work .work_box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2vw;
-}
-.work_box .box_L,
-.work_box .box_R {
-  width: 100%;
-  height: 18vw;
-  padding: 0 5vw;
-  background: linear-gradient(90deg, #d8e7ff 0%, #fafdff 100%);
-  border-radius: 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 2px solid var(--primary);
-}
-.work_box .box_L span,
-.work_box .box_R p {
-  font-size: 1.2vw;
-}
-.work_box .box_L {
-  position: absolute;
-}
 
-.work_box .box_R {
-  align-items: flex-end;
-}
-.work_box .box_R p {
-  padding-right: 3vw;
-}
-
-.section.work .work_box .box:hover .box_L {
-  width: 40%;
-  transition: 0.5s;
-  background: var(--primary);
-  color: #fff;
-}
-
-.section.work .box:nth-child(1) {
-  transform: translateX(-150%);
-}
-.section.work .box:nth-child(2) {
-  transform: translateX(150%);
-}
-
-/* section work end */
 /* section Education  */
 .section.education {
-  margin-bottom: 21vw;
+  margin-bottom: 26vw;
 }
 .section.education h2 {
   padding-bottom: 2vw;
@@ -671,12 +617,46 @@ footer .con_wrap .phone {
   }
 }
 @media screen and (max-width: 510px) {
-  .section.projects .pro_wrap li {
-    flex: 0 0 39.2vw;
+  .section.home .mainpage {
+    margin-top: 5vw;
+    width: 100%;
+    justify-content: flex-end;
   }
-}
-@media screen and (max-width: 445px) {
+  .section.home .mainpage .photo {
+    left: 30%;
+  }
+  .section.home .mainpage .buttons {
+    margin-right: 10vw;
+  }
+  .section.home .mainpage .buttons:nth-child(1) {
+    position: absolute;
+    top: 18vw;
+  }
+  .section.home .mainpage .buttons:nth-child(1) .btn {
+    padding: 1vw 2.9vw;
+  }
+  .section.home .mainpage .buttons:nth-child(3) {
+    position: absolute;
+    top: 25vw;
+  }
+
+  .section.education .edu_box {
+    flex-wrap: wrap;
+  }
+  .edu_box .box {
+    width: 100%;
+  }
+  .section.projects .pro_wrap {
+  }
   .section.projects .pro_wrap li {
-    flex: 0 0 39.1vw;
+    flex: 0 0 100%;
+  }
+  .section.projects .pro_wrap li .img_hover {
+    height: 50vw;
+  }
+  .section.projects .pro_wrap li .img_hover .bg {
+    bottom: -50vw;
+    width: 100%;
+    height: 50vw;
   }
 }
