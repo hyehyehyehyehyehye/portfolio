@@ -624,6 +624,9 @@ footer .con_wrap .phone {
   .section.home .text .title_rol {
     font-size: 4vw;
   }
+  .section.home .text .title_rol.about {
+    margin-top: 26vw;
+  }
   .section.home .text .h1 {
     font-size: 9vw;
   }
@@ -652,10 +655,14 @@ footer .con_wrap .phone {
   }
 
   .section.about .inner .text {
-    font-size: 2vw;
-    flex-direction: row;
+    font-size: 3vw;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .section.about .inner .text h3 {
+    font-size: 3vw;
+    color: var(--primary);
   }
 
   .section.about .inner .text .t_text {
@@ -668,23 +675,15 @@ footer .con_wrap .phone {
     margin-top: 3vw;
     border: 2px solid var(--gray2);
     border-radius: 3vw;
+    padding: 2vw 3vw;
   }
 
   .section.about .inner .text .t_text h3 {
     font-size: 3vw;
   }
-  .section.about .inner .text .m_text {
-    position: relative;
-  }
-  .section.about .inner .text .m_text::after {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 2px;
-    background-color: var(--gray2);
-    position: absolute;
-    right: -2.8vw;
-    top: 0;
+  .section.about .inner .text .m_text,
+  .section.about .inner .text .b_text {
+    padding: 0 3vw;
   }
 
   .section.education .edu_box {
@@ -698,14 +697,10 @@ footer .con_wrap .phone {
   .edu_box .box_R h3 {
     font-size: 3vw;
   }
-  .edu_box .box_L span,
-  .edu_box .box_R span {
-    font-size: 2vw;
-  }
 
   .section.projects .pro_wrap li {
     flex: 0 0 100%;
-    border-radius: 6vw;
+    border-radius: 4vw;
   }
   .section.projects .pro_wrap li .img_hover {
     height: 50vw;
@@ -715,7 +710,9 @@ footer .con_wrap .phone {
     width: 100%;
     height: 50vw;
   }
-
+  .section.projects .pro_wrap li .text {
+    padding: 3vw;
+  }
   .section.projects .pro_wrap li .text h4 {
     font-size: 3vw;
   }
