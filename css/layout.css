@@ -621,6 +621,12 @@ footer .con_wrap .phone {
     display: none;
   }
 
+  .section.home .text .title_rol {
+    font-size: 4vw;
+  }
+  .section.home .text .h1 {
+    font-size: 9vw;
+  }
   .section.home .mainpage {
     margin-top: 5vw;
     width: 100%;
@@ -636,12 +642,49 @@ footer .con_wrap .phone {
     position: absolute;
     top: 18vw;
   }
-  .section.home .mainpage .buttons:nth-child(1) .btn {
-    padding: 1vw 2.9vw;
-  }
+
   .section.home .mainpage .buttons:nth-child(3) {
     position: absolute;
     top: 25vw;
+  }
+  .section.about .inner {
+    flex-direction: column;
+  }
+
+  .section.about .inner .text {
+    font-size: 2vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .section.about .inner .text .t_text {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    margin-top: 3vw;
+    border: 2px solid var(--gray2);
+    border-radius: 3vw;
+  }
+
+  .section.about .inner .text .t_text h3 {
+    font-size: 3vw;
+  }
+  .section.about .inner .text .m_text {
+    position: relative;
+  }
+  .section.about .inner .text .m_text::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 2px;
+    background-color: var(--gray2);
+    position: absolute;
+    right: -2.8vw;
+    top: 0;
   }
 
   .section.education .edu_box {
@@ -650,10 +693,19 @@ footer .con_wrap .phone {
   .edu_box .box {
     width: 100%;
   }
-  .section.projects .pro_wrap {
+
+  .edu_box .box_L h3,
+  .edu_box .box_R h3 {
+    font-size: 3vw;
   }
+  .edu_box .box_L span,
+  .edu_box .box_R span {
+    font-size: 2vw;
+  }
+
   .section.projects .pro_wrap li {
     flex: 0 0 100%;
+    border-radius: 6vw;
   }
   .section.projects .pro_wrap li .img_hover {
     height: 50vw;
