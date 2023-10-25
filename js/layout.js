@@ -68,12 +68,15 @@ $(() => {
 
   // // // 스크롤 애니메이트
   let isVisibleEdu = false;
-  let isVisibleWor = false;
+  let isVisiblePro = false;
   let isVisibleAbout = false;
 
   $(window).scroll(function () {
     let box_L = $(".about .photo");
     let box_R = $(".about .text");
+    let t_text = $(".t_text");
+    let m_text = $(".m_text");
+    let b_text = $(".b_text");
 
     // about
     if (checkVisible($(".about")) && !isVisibleAbout) {
@@ -90,6 +93,21 @@ $(() => {
           transform: "translateX(0)",
           transition: "0.5s",
         });
+        t_text.css({
+          transform: "translateX(0)",
+          transition: "0.5s",
+          transitionDelay: "0.3s",
+        });
+        m_text.css({
+          transform: "translateX(0)",
+          transition: "0.5s",
+          transitionDelay: "0.4s",
+        });
+        b_text.css({
+          transform: "translateX(0)",
+          transition: "0.5s",
+          transitionDelay: "0.5s",
+        });
         next();
       });
       isVisibleAbout = true;
@@ -102,49 +120,22 @@ $(() => {
         transform: "translateX(150%)",
         transition: "0.5s",
       });
-      isVisibleAbout = false;
-    }
-  });
-
-  function checkVisible(element) {
-    let windowHeight = $(window).height();
-    let scrollTop = $(window).scrollTop();
-    let offsetTop = element.offset().top;
-
-    return scrollTop + windowHeight > offsetTop;
-  }
-  $(window).scroll(function () {
-    let box_L = $(".section.work .box:nth-child(1)");
-    let box_R = $(".section.work .box:nth-child(2)");
-
-    // work
-    if (checkVisible($(".work")) && !isVisibleWor) {
-      box_L.delay(500).queue(function (next) {
-        $(this).css({
-          transform: "translateX(0)",
-          transition: "0.5s",
-        });
-        next();
-      });
-
-      box_R.delay(500).queue(function (next) {
-        $(this).css({
-          transform: "translateX(0)",
-          transition: "0.5s",
-        });
-        next();
-      });
-      isVisibleWor = true;
-    } else if (!checkVisible($(".work")) && isVisibleWor) {
-      box_L.css({
-        transform: "translateX(-150%)",
-        transition: "0.5s",
-      });
-      box_R.css({
+      t_text.css({
         transform: "translateX(150%)",
         transition: "0.5s",
+        transitionDelay: "0.3s",
       });
-      isVisibleWor = false;
+      m_text.css({
+        transform: "translateX(150%)",
+        transition: "0.5s",
+        transitionDelay: "0.4s",
+      });
+      b_text.css({
+        transform: "translateX(150%)",
+        transition: "0.5s",
+        transitionDelay: "0.5s",
+      });
+      isVisibleAbout = false;
     }
   });
 
@@ -162,7 +153,7 @@ $(() => {
 
     // education
     if (checkVisible($(".education")) && !isVisibleEdu) {
-      box_L.delay(500).queue(function (next) {
+      box_L.delay(300).queue(function (next) {
         $(this).css({
           transform: "translateX(0)",
           transition: "0.5s",
@@ -170,7 +161,7 @@ $(() => {
         next();
       });
 
-      box_R.delay(500).queue(function (next) {
+      box_R.delay(300).queue(function (next) {
         $(this).css({
           transform: "translateX(0)",
           transition: "0.5s",
@@ -307,7 +298,7 @@ $(() => {
     }
   );
 
-  // // //
+  // // // nav <-> section 연결
   $("nav ul li a").click(function (e) {
     e.preventDefault();
     var target = $(this).attr("href");
@@ -320,4 +311,72 @@ $(() => {
       1000
     );
   });
+
+  // // //
+  $(window).scroll(function () {
+    let box_L = $(".pro_wrap li:nth-child(1)");
+    let box_R = $(".pro_wrap li:nth-child(2)");
+    let box_L2 = $(".pro_wrap li:nth-child(3)");
+    let box_R3 = $(".pro_wrap li:nth-child(4)");
+
+    // .section.projects
+    if (checkVisible($(".section.projects")) && !isVisiblePro) {
+      box_L.delay(300).queue(function (next) {
+        $(this).css({
+          transform: "translateY(0)",
+          transition: "0.5s",
+        });
+        next();
+      });
+
+      box_R.delay(300).queue(function (next) {
+        $(this).css({
+          transform: "translateY(0)",
+          transition: "1s",
+        });
+        next();
+      });
+      box_L2.delay(300).queue(function (next) {
+        $(this).css({
+          transform: "translateY(0)",
+          transition: "1.5s",
+        });
+        next();
+      });
+      box_R3.delay(300).queue(function (next) {
+        $(this).css({
+          transform: "translateY(0)",
+          transition: "2s",
+        });
+        next();
+      });
+      isVisiblePro = true;
+    } else if (!checkVisible($(".section.projects")) && isVisiblePro) {
+      box_L.css({
+        transform: "translateY(240%)",
+        transition: "0.5s",
+      });
+      box_R.css({
+        transform: "translateY(240%)",
+        transition: "0.5s",
+      });
+      box_L2.css({
+        transform: "translateY(240%)",
+        transition: "0.5s",
+      });
+      box_R3.css({
+        transform: "translateY(240%)",
+        transition: "0.5s",
+      });
+      isVisiblePro = false;
+    }
+  });
+
+  function checkVisible(element) {
+    let windowHeight = $(window).height();
+    let scrollTop = $(window).scrollTop();
+    let offsetTop = element.offset().top;
+
+    return scrollTop + windowHeight > offsetTop;
+  }
 });

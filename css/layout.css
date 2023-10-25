@@ -20,6 +20,8 @@ body::after {
 }
 .wrap {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 /* header */
@@ -66,7 +68,7 @@ main {
 }
 .section.home {
   margin-top: 3vw;
-  margin-bottom: 15vw;
+  margin-bottom: 20vw;
 }
 .section.home .text {
   width: 100%;
@@ -95,15 +97,7 @@ main {
   position: relative;
   margin-top: 1vw;
 }
-.section.home .email {
-  letter-spacing: 1px;
-}
-.section.home .email a {
-  display: block;
-  border-radius: 30vw;
-  border: 2px solid var(--gray3);
-  padding: 1vw 2.5vw;
-}
+
 .section.home .photo {
   width: 35vw;
   height: 48vw;
@@ -144,7 +138,7 @@ main {
 }
 .btn {
   display: block;
-  border: 2px solid var(--gray3);
+  border: 2px solid var(--gray2);
   font-weight: 700;
   text-align: center;
   border-radius: 50vw;
@@ -207,6 +201,7 @@ main {
 /* section about*/
 .section.about {
   margin-bottom: 26vw;
+  margin-top: 4vw;
 }
 .section.about .inner {
   display: flex;
@@ -222,7 +217,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3vw;
+  font-size: 1.2vw;
 }
+.section.about .inner .text .t_text h3 {
+  color: var(--primary);
+}
+
 .section.about .text_rol {
   margin-top: 16vw;
 }
@@ -244,21 +244,27 @@ main {
 /* section projects*/
 .section.projects {
   margin-bottom: 21vw;
+  position: relative;
+  overflow: hidden;
 }
+
 .section.projects .pro_wrap {
   display: flex;
   width: 100%;
   height: 100%;
   flex-wrap: wrap;
-  gap: 1.9vw;
   margin-top: 3vw;
+  gap: 3vw;
+  justify-content: space-between;
 }
 .section.projects .pro_wrap li {
-  flex: 0 0 40vw;
+  flex: 0 0 39.5vw;
   overflow: hidden;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--gray2);
   border-radius: 3vw;
+  transform: translateY(240%);
 }
+
 .section.projects .pro_wrap li .img_hover {
   width: 100%;
   height: 30vw;
@@ -314,6 +320,10 @@ main {
   position: relative;
   border-radius: 50vw;
 }
+.section.projects .img_hover .button .btn {
+  background-color: #fff;
+  border: none;
+}
 .section.projects .button:nth-child(1) {
   transform: translateX(-300%);
   opacity: 0;
@@ -354,8 +364,9 @@ main {
   width: 6vw;
 }
 .section.projects .inner > .buttons {
-  margin-top: 30px;
+  margin-top: 6vw;
 }
+
 .section.projects .button_all {
   overflow: hidden;
   position: relative;
@@ -441,7 +452,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 2px solid var(--primary);
 }
 .edu_box .box_L span,
 .edu_box .box_R span {
@@ -494,7 +504,8 @@ main {
 }
 .tool_bar .bar {
   border-radius: 100px;
-  background: var(--primary);
+  background: linear-gradient(270deg, #0c00ff 0%, #90a5e8 100%);
+
   height: 5vw;
   width: 0;
 }
@@ -545,7 +556,7 @@ main {
   height: 40vw;
   overflow: hidden;
   border-radius: 3vw;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--gray2);
   position: relative;
 }
 .section.artwork .tab_wrap .sliders.graphic li .img_hover img {
@@ -578,7 +589,10 @@ main {
   top: -7.5vw;
   left: 14vw;
 }
-
+.section.artwork .img_hover .button .btn {
+  background-color: #fff;
+  border: none;
+}
 .section.artwork .tab_wrap .sliders.graphic li .text p {
   margin-top: 1vw;
   line-height: 2vw;
@@ -645,8 +659,24 @@ footer .con_wrap .phone {
   font-size: 2vw;
 }
 
+@media screen and (max-width: 711px) {
+  .section.projects .pro_wrap li {
+    flex: 0 0 39.4vw;
+  }
+}
+
 @media screen and (max-width: 650px) {
-  .section.projects .pro_wrap {
-    gap: 1vw;
+  .section.projects .pro_wrap li {
+    flex: 0 0 39.3vw;
+  }
+}
+@media screen and (max-width: 510px) {
+  .section.projects .pro_wrap li {
+    flex: 0 0 39.2vw;
+  }
+}
+@media screen and (max-width: 445px) {
+  .section.projects .pro_wrap li {
+    flex: 0 0 39.1vw;
   }
 }
