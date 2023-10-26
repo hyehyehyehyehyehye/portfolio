@@ -20,7 +20,7 @@ $(() => {
     $(this).prev(".su_button_circle").addClass("desplode-circle");
   });
 
-  // // // top text
+  // top text
   $(".title_rol").bxSlider({
     mode: "vertical",
     auto: true,
@@ -29,7 +29,7 @@ $(() => {
     pause: 1000,
   });
 
-  // // // loop text
+  // loop text
   $(".text_loop").bxSlider({
     minSlides: 4,
     maxSlides: 4,
@@ -38,12 +38,12 @@ $(() => {
     speed: 9000,
   });
 
-  // // // 하단 스크롤 게이지 바
+  // 하단 스크롤 게이지 바
   let txt = $(".txt");
-  let bar = $(".progress .bar ");
+  let bar = $(".progress .bar");
 
   function getPercent(sct) {
-    //스크롤진행율 계산 함수
+    // 스크롤진행율 계산 함수
     const scrollHeight = $(".wrap").height();
     const scrollRealHeight = scrollHeight - $(window).height();
     let scrollPercent = Math.floor((sct / scrollRealHeight) * 100);
@@ -52,7 +52,7 @@ $(() => {
   }
 
   function render(scrollPercent) {
-    //스크롤바 애니메이트 함수
+    // 스크롤바 애니메이트 함수
     if (scrollPercent >= 100) {
       scrollPercent = 100;
     }
@@ -61,12 +61,12 @@ $(() => {
   }
 
   $(window).on("scroll", function () {
-    //윈도우 스크롤 양을 얻어오는 함수
+    // 윈도우 스크롤 양을 얻어오는 함수
     let sct = $(this).scrollTop();
     getPercent(sct);
   });
 
-  // // // 스크롤 애니메이트
+  // 스크롤 애니메이트
   let isVisibleEdu = false;
   let isVisiblePro = false;
   let isVisibleAbout = false;
@@ -231,15 +231,33 @@ $(() => {
     if (eval == "above") return y < viewportHeight + scrolltop;
   }
 
-  // // // artwork
+  // artwork
   $(".sliders.graphic").bxSlider({
     controls: true,
     stopAutoOnClick: true,
     pager: false,
     pause: 3000,
   });
+  $(".sliders.graphicNews").bxSlider({
+    controls: true,
+    stopAutoOnClick: true,
+    pager: false,
+    pause: 3000,
+  });
+  $(".sliders.cardNews").bxSlider({
+    controls: true,
+    stopAutoOnClick: true,
+    pager: false,
+    pause: 3000,
+  });
+  $(".sliders.exhibition").bxSlider({
+    controls: true,
+    stopAutoOnClick: true,
+    pager: false,
+    pause: 3000,
+  });
 
-  // // // top photo
+  // top photo
   $(window).on("scroll", function () {
     var scrollTop = $(window).scrollTop();
     var photo = $(".mainpage .photo");
@@ -250,7 +268,7 @@ $(() => {
     );
   });
 
-  // // // top text
+  // top text
   const content = "JO SO HYE";
   const text = document.querySelector(".section.home .h1");
   let i = 0;
@@ -299,7 +317,7 @@ $(() => {
   );
 
   // // // nav <-> section 연결
-  $("nav ul li a").click(function (e) {
+  $("nav > ul > li > a").click(function (e) {
     e.preventDefault();
     var target = $(this).attr("href");
     var offset = $(target).offset().top;
@@ -312,14 +330,13 @@ $(() => {
     );
   });
 
-  // // //
+  // // //.section.projects
   $(window).scroll(function () {
     let box_L = $(".pro_wrap li:nth-child(1)");
     let box_R = $(".pro_wrap li:nth-child(2)");
     let box_L2 = $(".pro_wrap li:nth-child(3)");
     let box_R3 = $(".pro_wrap li:nth-child(4)");
 
-    // .section.projects
     if (checkVisible($(".section.projects")) && !isVisiblePro) {
       box_L.delay(300).queue(function (next) {
         $(this).css({
@@ -379,4 +396,15 @@ $(() => {
 
     return scrollTop + windowHeight > offsetTop;
   }
+
+  const tabBtn = $(".tabactive .tab li");
+  const panels = $(".tab_wrap ul");
+  tabBtn.on("click", function (e) {
+    e.preventDefault();
+    let tg = $(this).index();
+    panels.hide();
+    tabBtn.removeClass("on");
+    panels.eq(tg).show();
+    tabBtn.eq(tg).addClass("on");
+  });
 });
