@@ -19,6 +19,7 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
 </head>
 <body>
     <div class="wrap">
+        <div class="overlay"></div>
         <header>
             <div class="top">
                 <h1> <a href="index.html">logo
@@ -28,9 +29,7 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
                     <ul>
                         <li><a href="#home">HOME</a></li>
                         <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#education" style="display: none;">EDUCATION</a></li>
                         <li><a href="#projects">PROJECT</a></li>
-                        <li><a href="#tool" style="display: none;">TOOLS&SKILLS</a></li>
                         <li><a href="#artwork">ARTWORK</a></li>
                         <li><a href="#contact">CONTACT</a></li>
                     </ul>
@@ -116,7 +115,7 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
                     </ul>
                 </div>
                 <div class="inner">
-                    <p class="h3">안녕하세요! 언제나 최선을 다 하는 <strong>조소혜</strong>입니다. 저는 웹
+                    <p class="h3">안녕하세요! 언제나 최선을 다 하는 조소혜입니다. 저는 웹
                         디자인과 개발에 대한 열정과 관심을가지고, 최신
                         트렌드를 익히고 적용하여 멋진
                         경험을
@@ -428,7 +427,7 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
                                             <div class="button">
                                                 <span class="su_button_circle">
                                                 </span>
-                                                <a href="#" class="btn">
+                                                <a href="./gallery/1.html" class="btn artworkbtn">
                                                     <span class="button_text_container">View More</span>
                                                 </a>
                                             </div>
@@ -495,17 +494,17 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
                                 <li>
                                     <div class="img_hover">
                                         <img src="./img/artwork/4.jpg" alt="">
-                                        <div class="bg"></div>
-                                        <div class="buttons">
-                                            <div class="button">
-                                                <span class="su_button_circle">
-                                                </span>
-                                                <a href="#" class="btn">
-                                                    <span class="button_text_container">View More</span>
-                                                </a>
-                                            </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <div class="button">
+                                            <span class="su_button_circle">
+                                            </span>
+                                            <a href="#" class="btn">
+                                                <span class="button_text_container">View More</span>
+                                            </a>
                                         </div>
                                     </div>
+
                                     <div class="text">
                                         <p>05. 전국 법원 수 인포그래픽</p>
                                     </div>
@@ -529,10 +528,11 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
                                     </div>
                                 </li>
                             </ul>
+                            <!-- graphicNews -->
                             <ul class="sliders graphicNews">
                                 <li>
                                     <div class="img_hover">
-                                        <img src="3" alt="">
+                                        <img src="#" alt="">
                                         <div class="bg"></div>
                                         <div class="buttons">
                                             <div class="button">
@@ -697,6 +697,9 @@ https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                        <div id="lightbox">
+                            <div id="lightboxImage"></div>
                         </div>
                     </div>
                 </div>

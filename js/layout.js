@@ -1,4 +1,18 @@
 $(() => {
+  // // // nav <-> section 연결
+  $("nav > ul > li > a").on("click", function (e) {
+    e.preventDefault();
+    var target = $(this).attr("href");
+    var offset = $(target).offset().top;
+
+    $("html, body").animate(
+      {
+        scrollTop: offset,
+      },
+      1000
+    );
+  });
+
   // // // btn
   $(".btn").mouseenter(function (e) {
     var parentOffset = $(this).offset();
@@ -29,7 +43,7 @@ $(() => {
     pause: 1000,
   });
 
-  // loop text
+  // // // loop text
   $(".text_loop").bxSlider({
     minSlides: 4,
     maxSlides: 4,
@@ -38,35 +52,7 @@ $(() => {
     speed: 9000,
   });
 
-  // 하단 스크롤 게이지 바
-  let txt = $(".txt");
-  let bar = $(".progress .bar");
-
-  function getPercent(sct) {
-    // 스크롤진행율 계산 함수
-    const scrollHeight = $(".wrap").height();
-    const scrollRealHeight = scrollHeight - $(window).height();
-    let scrollPercent = Math.floor((sct / scrollRealHeight) * 100);
-    console.log(scrollPercent);
-    render(scrollPercent);
-  }
-
-  function render(scrollPercent) {
-    // 스크롤바 애니메이트 함수
-    if (scrollPercent >= 100) {
-      scrollPercent = 100;
-    }
-    txt.text(scrollPercent + "%");
-    bar.css("width", scrollPercent + "%");
-  }
-
-  $(window).on("scroll", function () {
-    // 윈도우 스크롤 양을 얻어오는 함수
-    let sct = $(this).scrollTop();
-    getPercent(sct);
-  });
-
-  // 스크롤 애니메이트
+  // // //스크롤 애니메이트 about/project/educ
   let isVisibleEdu = false;
   let isVisiblePro = false;
   let isVisibleAbout = false;
@@ -78,7 +64,7 @@ $(() => {
     let m_text = $(".m_text");
     let b_text = $(".b_text");
 
-    // about
+    // // // about
     if (checkVisible($(".about")) && !isVisibleAbout) {
       box_L.delay(500).queue(function (next) {
         $(this).css({
@@ -139,14 +125,6 @@ $(() => {
     }
   });
 
-  function checkVisible(element) {
-    let windowHeight = $(window).height();
-    let scrollTop = $(window).scrollTop();
-    let offsetTop = element.offset().top;
-
-    return scrollTop + windowHeight > offsetTop;
-  }
-
   $(window).scroll(function () {
     let box_L = $(".edu_box .box:nth-child(1)");
     let box_R = $(".edu_box .box:nth-child(2)");
@@ -182,15 +160,7 @@ $(() => {
     }
   });
 
-  function checkVisible(element) {
-    let windowHeight = $(window).height();
-    let scrollTop = $(window).scrollTop();
-    let offsetTop = element.offset().top;
-
-    return scrollTop + windowHeight > offsetTop;
-  }
-
-  // skill
+  // // // skill
   var isVisibleTool = false;
 
   $(window).scroll(function () {
@@ -238,24 +208,6 @@ $(() => {
     pager: false,
     pause: 3000,
   });
-  $(".sliders.graphicNews").bxSlider({
-    controls: true,
-    stopAutoOnClick: true,
-    pager: false,
-    pause: 3000,
-  });
-  $(".sliders.cardNews").bxSlider({
-    controls: true,
-    stopAutoOnClick: true,
-    pager: false,
-    pause: 3000,
-  });
-  $(".sliders.exhibition").bxSlider({
-    controls: true,
-    stopAutoOnClick: true,
-    pager: false,
-    pause: 3000,
-  });
 
   // top photo
   $(window).on("scroll", function () {
@@ -284,51 +236,6 @@ $(() => {
   }
 
   const intervalId = setInterval(typing, 200);
-
-  // // // artwork img hover event
-  $(".pro_wrap li").hover(
-    function () {
-      var image = $(this).find(".img_hover img");
-      var imageHeight = image.height();
-      var containerHeight = $(this).height();
-      var topValue =
-        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
-
-      image.stop().animate({ top: topValue }, 3000);
-    },
-    function () {
-      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
-    }
-  );
-
-  $(".sliders.graphic li").hover(
-    function () {
-      var image = $(this).find(".img_hover img");
-      var imageHeight = image.height();
-      var containerHeight = $(this).height();
-      var topValue =
-        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
-
-      image.stop().animate({ top: topValue }, 3000);
-    },
-    function () {
-      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
-    }
-  );
-
-  // // // nav <-> section 연결
-  $("nav > ul > li > a").click(function (e) {
-    e.preventDefault();
-    var target = $(this).attr("href");
-    var offset = $(target).offset().top;
-
-    $("html, body").animate(
-      {
-        scrollTop: offset,
-      },
-      1000
-    );
-  });
 
   // // //.section.projects
   $(window).scroll(function () {
@@ -396,7 +303,7 @@ $(() => {
 
     return scrollTop + windowHeight > offsetTop;
   }
-
+  // // // section artwork"
   const tabBtn = $(".tabactive .tab li");
   const panels = $(".tab_wrap ul");
   tabBtn.on("click", function (e) {
@@ -406,5 +313,77 @@ $(() => {
     tabBtn.removeClass("on");
     panels.eq(tg).show();
     tabBtn.eq(tg).addClass("on");
+  });
+
+  // // // artwork img hover event
+  $(".pro_wrap li").hover(
+    function () {
+      var image = $(this).find(".img_hover img");
+      var imageHeight = image.height();
+      var containerHeight = $(this).height();
+      var topValue =
+        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
+
+      image.stop().animate({ top: topValue }, 3000);
+    },
+    function () {
+      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
+    }
+  );
+
+  $(".sliders.graphic li").hover(
+    function () {
+      var image = $(this).find(".img_hover img");
+      var imageHeight = image.height();
+      var containerHeight = $(this).height();
+      var topValue =
+        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
+
+      image.stop().animate({ top: topValue }, 3000);
+    },
+    function () {
+      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
+    }
+  );
+  // // // 하단 스크롤 게이지 바
+  let txt = $(".txt");
+  let bar = $(".progress .bar");
+
+  function getPercent(sct) {
+    // 스크롤진행율 계산 함수
+    const scrollHeight = $(".wrap").height();
+    const scrollRealHeight = scrollHeight - $(window).height();
+    let scrollPercent = Math.floor((sct / scrollRealHeight) * 100);
+    render(scrollPercent);
+  }
+
+  function render(scrollPercent) {
+    // 스크롤바 애니메이트 함수
+    if (scrollPercent >= 100) {
+      scrollPercent = 100;
+    }
+    txt.text(scrollPercent + "%");
+    bar.css("width", scrollPercent + "%");
+  }
+
+  $(window).on("scroll", function () {
+    // 윈도우 스크롤 양을 얻어오는 함수
+    let sct = $(this).scrollTop();
+    getPercent(sct);
+  });
+
+  // // //
+  const btn = $(".sliders li:not(.bx-clone) .img_hover .artworkbtn");
+  const overlay = $(".overlay");
+  console.log("btn");
+
+  btn.on("click", function (e) {
+    e.preventDefault();
+    overlay.addClass("open");
+  });
+
+  overlay.on("click", function (e) {
+    e.preventDefault();
+    overlay.removeClass("open");
   });
 });
