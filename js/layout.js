@@ -1,10 +1,21 @@
 $(() => {
+  // // // 상단 스크롤 게이지 바
+  let txt = $(".txt");
+  let bar = $(".progress .bar");
+
+  function getPercent(sct) {
+    // 스크롤진행율 계산 함수
+    const scrollHeight = $(".wrap").height();
+    const scrollRealHeight = scrollHeight - $(window).height();
+    let scrollPercent = Math.floor((sct / scrollRealHeight) * 100);
+    render(scrollPercent);
+  }
+
   // // // nav <-> section 연결
   $("nav > ul > li > a").on("click", function (e) {
     e.preventDefault();
     var target = $(this).attr("href");
     var offset = $(target).offset().top;
-
     $("html, body").animate(
       {
         scrollTop: offset,
@@ -16,7 +27,6 @@ $(() => {
   // // // btn
   $(".btn").mouseenter(function (e) {
     var parentOffset = $(this).offset();
-
     var relX = e.pageX - parentOffset.left;
     var relY = e.pageY - parentOffset.top;
     $(this).prev(".su_button_circle").css({ left: relX, top: relY });
@@ -26,7 +36,6 @@ $(() => {
 
   $(".btn").mouseleave(function (e) {
     var parentOffset = $(this).offset();
-
     var relX = e.pageX - parentOffset.left;
     var relY = e.pageY - parentOffset.top;
     $(this).prev(".su_button_circle").css({ left: relX, top: relY });
@@ -88,12 +97,12 @@ $(() => {
         m_text.css({
           transform: "translateX(0)",
           transition: "0.5s",
-          transitionDelay: "0.4s",
+          transitionDelay: "0.5s",
         });
         b_text.css({
           transform: "translateX(0)",
           transition: "0.5s",
-          transitionDelay: "0.5s",
+          transitionDelay: "0.7s",
         });
         next();
       });
@@ -110,17 +119,14 @@ $(() => {
       t_text.css({
         transform: "translateX(150%)",
         transition: "0.5s",
-        transitionDelay: "0.3s",
       });
       m_text.css({
         transform: "translateX(150%)",
         transition: "0.5s",
-        transitionDelay: "0.4s",
       });
       b_text.css({
         transform: "translateX(150%)",
         transition: "0.5s",
-        transitionDelay: "0.5s",
       });
       isVisibleAbout = false;
     }
@@ -201,14 +207,6 @@ $(() => {
 
     if (eval == "above") return y < viewportHeight + scrolltop;
   }
-
-  // artwork
-  $(".sliders.graphic").bxSlider({
-    controls: true,
-    stopAutoOnClick: true,
-    pager: false,
-    pause: 3000,
-  });
 
   // top photo
   $(window).on("scroll", function () {
@@ -304,7 +302,7 @@ $(() => {
 
     return scrollTop + windowHeight > offsetTop;
   }
-  // // // section artwork"
+  // // //tab section artwork"
   const tabBtn = $(".tabactive .tab li");
   const panels = $(".tab_wrap ul");
   tabBtn.on("click", function (e) {
@@ -317,46 +315,19 @@ $(() => {
   });
 
   // // // artwork img hover event
-  $(".pro_wrap li").hover(
+
+  $(".sliders li").hover(
     function () {
       var image = $(this).find(".img_hover img");
       var imageHeight = image.height();
       var containerHeight = $(this).height();
-      var topValue =
-        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
-
+      var topValue = "-" + ((imageHeight - 200) * 100) / containerHeight + "%";
       image.stop().animate({ top: topValue }, 3000);
     },
     function () {
       $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
     }
   );
-
-  $(".sliders.graphic li").hover(
-    function () {
-      var image = $(this).find(".img_hover img");
-      var imageHeight = image.height();
-      var containerHeight = $(this).height();
-      var topValue =
-        "-" + ((imageHeight - containerHeight) * 110) / containerHeight + "%";
-
-      image.stop().animate({ top: topValue }, 3000);
-    },
-    function () {
-      $(this).find(".img_hover img").stop().animate({ top: "0%" }, 3000);
-    }
-  );
-  // // // 하단 스크롤 게이지 바
-  let txt = $(".txt");
-  let bar = $(".progress .bar");
-
-  function getPercent(sct) {
-    // 스크롤진행율 계산 함수
-    const scrollHeight = $(".wrap").height();
-    const scrollRealHeight = scrollHeight - $(window).height();
-    let scrollPercent = Math.floor((sct / scrollRealHeight) * 100);
-    render(scrollPercent);
-  }
 
   function render(scrollPercent) {
     // 스크롤바 애니메이트 함수
@@ -373,10 +344,10 @@ $(() => {
     getPercent(sct);
   });
 
-  // // //
+  // // // animation Logo
   var animation = bodymovin.loadAnimation({
     container: document.getElementById("lottie"), // Required
-    path: "../animation/ani3.json", // Required
+    path: "../animation/ani4.json", // Required
     renderer: "svg", // Required
     loop: true, // Optional
     autoplay: true, // Optional

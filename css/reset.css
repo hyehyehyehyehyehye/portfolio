@@ -189,33 +189,28 @@ h4,
   position: fixed;
   width: 100%;
   left: 50%;
-  bottom: 0;
-  height: 5px;
+  top: 0;
+  height: 3px;
   transform: translateX(-50%);
   text-align: center;
   line-height: 1;
-  border: 0.5px solid #222;
-  z-index: 1;
+  z-index: 10;
 }
 
 .progress .bar {
   position: absolute;
   width: 0%;
   height: 100%;
-  background-color: var(--primary);
+  background: linear-gradient(270deg, #0c00ff 0%, #3459fd 49.48%, #6dd5fa 100%);
   left: 0;
 }
 
 .txt {
-  font-size: 30px;
-}
-
-img.back {
-  width: 100vw;
   position: absolute;
-  top: 0;
-  z-index: -10;
-  /* padding: 0 50px; */
+  left: 15vw;
+  top: 1.5vw;
+  font-size: 1.2vw;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 510px) {
