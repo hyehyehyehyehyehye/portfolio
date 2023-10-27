@@ -63,6 +63,7 @@ $(() => {
     let t_text = $(".t_text");
     let m_text = $(".m_text");
     let b_text = $(".b_text");
+    let b2_text = $(".b2_text");
 
     // // // about
     if (checkVisible($(".about")) && !isVisibleAbout) {
@@ -373,17 +374,11 @@ $(() => {
   });
 
   // // //
-  const btn = $(".sliders li:not(.bx-clone) .img_hover .artworkbtn");
-  const overlay = $(".overlay");
-  console.log("btn");
-
-  btn.on("click", function (e) {
-    e.preventDefault();
-    overlay.addClass("open");
-  });
-
-  overlay.on("click", function (e) {
-    e.preventDefault();
-    overlay.removeClass("open");
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById("lottie"), // Required
+    path: "../animation/ani3.json", // Required
+    renderer: "svg", // Required
+    loop: true, // Optional
+    autoplay: true, // Optional
   });
 });
