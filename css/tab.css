@@ -1,0 +1,42 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css);
+.tabs {
+  margin: 50px;
+}
+
+.tab-button-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-button {
+  background-color: #ccc;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-button.active {
+  background-color: #bbb;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.carousel {
+  width: 300px;
+  margin: 50px auto;
+}
+
+.carousel img {
+  width: 100%;
+  margin: 0 auto;
+}

@@ -302,26 +302,15 @@ $(() => {
 
     return scrollTop + windowHeight > offsetTop;
   }
-  // // //tab section artwork"
-  const tabBtn = $(".tabactive .tab li");
-  const panels = $(".tab_wrap ul");
-  tabBtn.on("click", function (e) {
-    e.preventDefault();
-    let tg = $(this).index();
-    panels.hide();
-    tabBtn.removeClass("on");
-    panels.eq(tg).show();
-    tabBtn.eq(tg).addClass("on");
-  });
 
   // // // artwork img hover event
 
-  $(".sliders li").hover(
+  $(".tab-content li").hover(
     function () {
       var image = $(this).find(".img_hover img");
       var imageHeight = image.height();
       var containerHeight = $(this).height();
-      var topValue = "-" + ((imageHeight - 200) * 100) / containerHeight + "%";
+      var topValue = "-" + (imageHeight * 60) / containerHeight + "%";
       image.stop().animate({ top: topValue }, 3000);
     },
     function () {
@@ -343,6 +332,27 @@ $(() => {
     let sct = $(this).scrollTop();
     getPercent(sct);
   });
+  // // //xw
+  $("#content1.carousel").slick({ slidesToShow: 3 });
+
+  $(".tab-button").on("click", function () {
+    var tabButtonId = $(this).attr("id");
+    $(".tab-button").removeClass("active");
+    $(".tab-content").removeClass("active");
+
+    $(this).addClass("active");
+    var targetContent = $("#" + "content" + tabButtonId.slice(-1));
+    targetContent.addClass("active");
+
+    // 탭 버튼을 클릭할 때마다 해당하는 캐로셀을 초기화합니다.
+    // 이전에 초기화했던 캐로셀은 먼저 해제(unslick)하고 다시 초기화합니다.
+    if (targetContent.hasClass("slick-initialized")) {
+      targetContent.slick("unslick");
+    }
+    targetContent.slick({ slidesToShow: 3 });
+  });
+
+  $(".popup").magnificPopup({ type: "image" });
 
   // // // animation Logo
   var animation = bodymovin.loadAnimation({
