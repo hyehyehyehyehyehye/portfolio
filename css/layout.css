@@ -546,7 +546,7 @@ footer .con_wrap .email_b a {
   width: 40vw;
   padding: 1vw 1vw;
   background: var(--primary);
-  border-radius: 50px;
+  border-radius: 100px;
   color: #fff;
 }
 
