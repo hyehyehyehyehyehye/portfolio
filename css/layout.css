@@ -353,6 +353,12 @@ main {
   transition: 0.5s;
   z-index: -1;
 }
+.section.projects .button:nth-child(3) {
+  transform: translateX(300%);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -1;
+}
 
 .section.projects .text_rol .text_loop .gray {
   right: 1vw;
@@ -364,6 +370,11 @@ main {
   z-index: 0;
 }
 .section.projects .pro_wrap li:hover .img_hover .button:nth-child(2) {
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 0;
+}
+.section.projects .pro_wrap li:hover .img_hover .button:nth-child(3) {
   transform: translateX(0);
   opacity: 1;
   z-index: 0;
@@ -501,28 +512,25 @@ main {
 .section.artwork .tab-content.active {
   display: block;
 }
-.section.artwork .carousel {
-  position: absolute;
-}
-.section.artwork .carousel .draggable {
+
+.section.artwork .buttons {
   display: flex;
-  justify-content: flex-start;
-  width: 100%;
-  margin-top: 3vw;
+  gap: 2vw;
 }
-.section.artwork .carousel .slick-track {
-  display: flex;
-  justify-content: flex-start;
-  height: 40vw;
+.section.artwork .button {
+  overflow: hidden;
+  position: relative;
+  border-radius: 50vw;
 }
-.section.artwork .carousel .slick-track a {
-  display: block;
-  margin-right: 3vw;
+
+.slick-track a {
+  height: 35vw;
+  margin-right: 30px;
   border-radius: 3vw;
   border: 2px solid var(--gray2);
   overflow: hidden;
 }
-.section.artwork .carousel .slick-track a img {
+.slick-track a img {
   width: 100%;
 }
 
