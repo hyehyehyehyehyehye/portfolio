@@ -221,8 +221,8 @@ $(() => {
 
   const o = $(".card");
   $("#top").on("mousemove", function (e) {
-    let x = -($(window).innerWidth() / 2 - e.pageX) / 50;
-    let y = -($(window).innerHeight() / 2 - e.pageY) / 50;
+    let x = -($(window).innerWidth() / 2 - e.pageX) / 100;
+    let y = -($(window).innerHeight() / 2 - e.pageY) / 100;
     o.attr("style", `transform : rotateY(${x}deg) rotateX(${y}deg)`);
   });
 

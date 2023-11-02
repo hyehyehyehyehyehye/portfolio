@@ -139,7 +139,7 @@ main {
   border-radius: 30vw;
 }
 .card .thumb::after {
-  background: #b7bec293;
+  background: #9bc8ff93;
   content: "";
   display: block;
   position: absolute;
@@ -148,7 +148,7 @@ main {
   width: 80%;
   height: 105%;
   z-index: -1;
-  filter: blur(55px);
+  filter: blur(50px);
   border-radius: 30vw;
 }
 
@@ -493,7 +493,7 @@ main {
 }
 
 .tool_bar {
-  background: #d8e7ff;
+  background: #b9d4ff;
   justify-content: flex-start;
   border-radius: 100px;
   align-items: center;
