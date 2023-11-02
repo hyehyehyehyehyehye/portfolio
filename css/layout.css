@@ -684,8 +684,9 @@ footer .con_wrap .phone span i {
     width: 100%;
     justify-content: flex-end;
   }
-  .section.home .mainpage .photo {
-    left: 30%;
+  .section.home .mainpage #top {
+    position: absolute;
+    left: 12%;
   }
   .section.home .mainpage .buttons {
     margin-right: 10vw;
