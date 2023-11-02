@@ -135,7 +135,7 @@ main {
   background: #dff2ff url(../img/bg/2.png) no-repeat bottom 0 center;
   width: 100%;
   height: 100%;
-  background-size: 30vw;
+  background-size: 33vw;
   border-radius: 30vw;
 }
 .card .thumb::after {
