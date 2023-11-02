@@ -110,16 +110,47 @@ main {
   margin-top: 1vw;
 }
 
-.section.home .photo {
-  width: 35vw;
-  height: 48vw;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: aliceblue url(../img/bg/2.png) no-repeat top 4vw center/contain;
-  border-radius: 20vw;
-  background-size: 36vw;
+.perspective {
+  perspective: 1000px;
 }
+
+#top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.card {
+  width: 30vw;
+  height: 45vw;
+  margin: auto;
+  box-shadow: 0 70px 63px -60px #a3a3a3;
+  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; - 하위에 있는 자손도 모두 3d로 배치하겠다 기본값은 flat */
+  transition: transform 0.05s linear;
+  border-radius: 30vw;
+}
+.card .thumb {
+  background: #dff2ff url(../img/bg/2.png) no-repeat bottom center;
+  width: 100%;
+  height: 100%;
+  background-size: 30vw;
+  border-radius: 30vw;
+}
+.card .thumb::after {
+  background: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 100%;
+  height: 108%;
+  z-index: -1;
+  filter: blur(55px);
+}
+
 /* section home btn */
 .section.home .buttons {
   display: flex;
@@ -299,6 +330,12 @@ main {
 .section.projects .pro_wrap li:nth-child(4) .img_hover {
   background: url(../img/project/pro4.png) no-repeat center center/contain;
   background-size: 20vw 25vw;
+}
+
+.section.projects li iframe {
+  display: block;
+  width: 40vw;
+  height: 30vw;
 }
 
 /* img 속도 조절 */
