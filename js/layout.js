@@ -211,12 +211,19 @@ $(() => {
   // top photo
   $(window).on("scroll", function () {
     var scrollTop = $(window).scrollTop();
-    var photo = $(".mainpage .photo");
+    var photo = $(".card .thumb");
 
     photo.css(
       "background-position-y",
       ((scrollTop / 4) % photo.height()) + "px"
     );
+  });
+
+  const o = $(".card");
+  $("#top").on("mousemove", function (e) {
+    let x = -($(window).innerWidth() / 2 - e.pageX) / 50;
+    let y = -($(window).innerHeight() / 2 - e.pageY) / 50;
+    o.attr("style", `transform : rotateY(${x}deg) rotateX(${y}deg)`);
   });
 
   // top text
@@ -344,8 +351,6 @@ $(() => {
     var targetContent = $("#" + "content" + tabButtonId.slice(-1));
     targetContent.addClass("active");
 
-    // 탭 버튼을 클릭할 때마다 해당하는 캐로셀을 초기화합니다.
-    // 이전에 초기화했던 캐로셀은 먼저 해제(unslick)하고 다시 초기화합니다.
     if (targetContent.hasClass("slick-initialized")) {
       targetContent.slick("unslick");
     }
