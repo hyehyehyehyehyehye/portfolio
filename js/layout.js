@@ -220,10 +220,16 @@ $(() => {
   });
 
   const o = $(".card");
+  const o2 = $("img");
   $("#top").on("mousemove", function (e) {
     let x = -($(window).innerWidth() / 2 - e.pageX) / 100;
     let y = -($(window).innerHeight() / 2 - e.pageY) / 100;
     o.attr("style", `transform : rotateY(${x}deg) rotateX(${y}deg)`);
+    o2.attr({
+      style: `transform: rotateY(${
+        e * 0.5
+      }deg) rotateX(${y}deg) translateZ(20px) translateX(${y * 1.5}px)`,
+    });
   });
 
   // top text
@@ -340,7 +346,10 @@ $(() => {
     getPercent(sct);
   });
   // // //xw
-  $("#content1.carousel").slick({ slidesToShow: 3 });
+  $("#content1.carousel").slick({
+    slidesToShow: 3,
+    variableWidth: true,
+  });
 
   $(".tab-button").on("click", function () {
     var tabButtonId = $(this).attr("id");
@@ -354,7 +363,10 @@ $(() => {
     if (targetContent.hasClass("slick-initialized")) {
       targetContent.slick("unslick");
     }
-    targetContent.slick({ slidesToShow: 3 });
+    targetContent.slick({
+      slidesToShow: 3,
+      variableWidth: true,
+    });
   });
 
   $(".popup").magnificPopup({ type: "image" });

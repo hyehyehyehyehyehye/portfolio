@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.8/static/pretendard.css">
     <link href="https://cdn.jsdelivr.net/npm/typeface-poppins@1.1.13/index.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/layout.css">
+
     <script src='https://code.jquery.com/jquery-3.7.1.min.js'></script>
     <script src='https://code.jquery.com/ui/1.13.2/jquery-ui.js'></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -33,7 +37,7 @@
                         <li><a href="#home">HOME</a></li>
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#projects">PROJECT</a></li>
-                        <li><a href="#artwork" style="display: none;">ARTWORK</a></li>
+                        <li><a href="#artwork">ARTWORK</a></li>
                         <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
@@ -67,6 +71,9 @@
                                 <div class="card">
                                     <div class="thumb">
                                     </div>
+                                    <span class="img wave_top"></span>
+                                    <span class="img wave_bot"></span>
+
                                 </div>
                             </div>
                         </div>
@@ -131,7 +138,7 @@
                         트렌드를 익히고 적용하여 멋진
                         경험을
                         만들어내는
-                        것에흥미를
+                        것에 흥미를
                         느낍니다. 앞으로 새로운 도전과 성장의 기회를 갖는 것이 기대되고, 팀원들과함께 소통하고 협력하여 목표 달성을 위해 노력하겠습니다.
                     </p>
                 </div>
@@ -287,7 +294,7 @@
                                 <h4>04. Project - 카페인</h4>
                                 <p><span>기술스택</span>Figma</p>
                                 <p><span>제작기간</span>4주</p>
-                                <p><span>본인기여도</span>40%</p>
+                                <p><span>본인기여도</span>50%</p>
                             </div>
                         </li>
                     </ul>
@@ -384,87 +391,63 @@
                     <h2>Artworks</h2>
                     <div class="tabs">
                         <div class="tab-button-outer">
-                            <div id="tab1" class="tab-button active">
-                                <div class="button" id="tab1">
-                                    <span class="su_button_circle">
-                                    </span>
-                                    <a href="#content1" class="btn">
-                                        <span class="button_text_container">Infographic</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="tab2" class="tab-button">
-                                <div class="button">
-                                    <span class="su_button_circle">
-                                    </span>
-                                    <a href="#content2" class="btn">
-                                        <span class="button_text_container">Graphic News</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="tab3" class="tab-button">
-                                <div class="button">
-                                    <span class="su_button_circle">
-                                    </span>
-                                    <a href="#content3" class="btn">
-                                        <span class="button_text_container">Card News</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="tab4" class="tab-button">
-                                <div class="button">
-                                    <span class="su_button_circle">
-                                    </span>
-                                    <a href="#content4" class="btn">
-                                        <span class="button_text_container">Exhibition</span>
-                                    </a>
-                                </div>
-                            </div>
+                            <div id="tab1" class="tab-button active">Graphic</div>
+                            <div id="tab2" class="tab-button">Infographics</div>
+                            <div id="tab3" class="tab-button">Exhibition</div>
                         </div>
                         <div id="content1" class="tab-content active carousel">
-                            <a href="./gallery/img/info2.jpg" class="popup">
-                                <img src="./img/artwork/6.jpg">
-                                <div class="buttons">
-                                    <div class="button">
-                                        <span class="su_button_circle">
-                                        </span>
-                                        <a href="https://hyehyehyehyehyehye.github.io/project1/" class="btn"
-                                            target="_blank">
-                                            <span class="button_text_container">홈페이지</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="http://qwerew.cafe24.com/images/2.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/2.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/3.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/3.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/4.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/4.jpg"></a>
+                            <div class="popup-outer">
+                                <a href="./img/gallery/img/businessCard1.jpg" class="popup">view</a><img class="size"
+                                    src="./img/artwork/businessCard1.png">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/gallery/img/businessCard2.jpg" class="popup">view</a><img
+                                    src="./img/artwork/businessCard2.png">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/gallery/img/businessCard3.jpg" class="popup">view</a><img
+                                    src="./img/artwork/businessCard3.png">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/gallery/img/card1.jpg" class="popup">view</a><img
+                                    src="./img/artwork/card3.png" style="width: 110%;">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/gallery/img/card2.jpg" class="popup">view</a><img
+                                    src="./img/artwork/card2.png" style="width: 110%;">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/gallery/img/card3.jpg" class="popup">view</a><img
+                                    src="./img/artwork/card1.png" style="width: 110%;">
+                            </div>
+
+
                         </div>
                         <div id="content2" class="tab-content carousel">
-                            <a href="http://qwerew.cafe24.com/images/5.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/5.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/6.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/6.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/7.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/7.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/8.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/8.jpg"></a>
+                            <div class="popup-outer">
+                                <a href="./img/artwork/6.jpg" class="popup">view</a><img src="./img/artwork/6.jpg">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/artwork/3.jpg" class="popup">view</a><img src="./img/artwork/3.jpg">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/artwork/7.jpg" class="popup">view</a><img src="./img/artwork/7.jpg">
+                            </div>
+                            <div class="popup-outer">
+                                <a href="./img/artwork/8.jpg" class="popup">view</a><img src="./img/artwork/8.jpg">
+                            </div>
                         </div>
                         <div id="content3" class="tab-content carousel">
-                            <a href="http://qwerew.cafe24.com/images/1.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/1.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/2.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/2.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/3.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/3.jpg"></a>
-                            <a href="http://qwerew.cafe24.com/images/4.jpg" class="popup"><img
-                                    src="http://qwerew.cafe24.com/images/4.jpg"></a>
+                            <div class="popup-outer"><a href="./img/gallery/img/99.png" class="popup">view</a>
+                                <img src="./img/artwork/99-Expo-Poster-2-2.jpg" style="width: 110%;">
+                            </div>
+                            <div class="popup-outer"><a href="./img/gallery/img/2018.png" class="popup">view</a>
+                                <img src="./img/artwork//2018.png">
+                            </div>
+
                         </div>
                     </div>
                 </div>
-            </div>
         </main>
         <footer id="contact">
             <div class="inner">
